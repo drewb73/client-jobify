@@ -8,8 +8,8 @@ function Error() {
     <Wrapper className='full-page'>
         <div>
             <img src={img} alt='not found' />
-            <h3>text</h3>
-            <p>text</p>
+            <h3>Uh Oh! Page Not Found</h3>
+            <p>This is not the page you are looking for</p>
             <Link to='/'>Back Home</Link>
         </div>
     </Wrapper>
