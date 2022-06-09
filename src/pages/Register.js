@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Logo} from '../components'
+import {Logo, FormRow, Alert} from '../components'
 import Wrapper from '../assets/wrappers/RegisterPage'
 // global context and useNavigate will come later
 
@@ -8,6 +8,7 @@ const initialState = {
   email: "",
   password: "",
   isMember: true,
+  showAlert: true
 }
 
 //if possible prefer local state
@@ -35,21 +36,15 @@ const Register = () => {
       <form className='form' onSubmit={onSubmit}>
         <Logo />
         <h3>Login</h3>
+        {values.showAlert && <Alert />}
 
         {/* Name field */}
-        <div className='form-row'>
-          <label htmlFor='name' className='form-label'>
-            name
-          </label>
+        <FormRow type='text' name='name' value={values.name} handleChange={handleChange} />
+        {/* email field */}
+        <FormRow type='email' name='email' value={values.email} handleChange={handleChange} />
+        {/* password field */}
+        <FormRow type='password' name='password' value={values.password} handleChange={handleChange} />
 
-          <input
-           type='text'
-           value={values.name}
-           name='name'
-           onChange={handleChange}
-           className='form-input' 
-           />
-        </div>
 
         <button type='submit' className='btn btn-block'>
           Submit
