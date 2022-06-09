@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom'
 import main from '../assets/images/main.svg'
 import Wrapper from '../assets/wrappers/LandingPage'
 import {Logo} from '../components'
@@ -17,9 +17,9 @@ const Landing = () => {
                 <p>
                 I'm baby jianbing affogato listicle gastropub glossier seitan pitchfork unicorn food truck portland coloring book. Pug next level tilde post-ironic activated charcoal, prism 8-bit XOXO.
                 </p>
-                <button className='btn btn-hero'>
+                <Link to='/register' className='btn btn-hero'>
                     Login/Register
-                </button>
+                </Link>
             </div>
             <img src={main} alt='job hunt' className='img main-img'/>
         </div>
