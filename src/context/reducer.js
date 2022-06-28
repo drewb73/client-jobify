@@ -56,8 +56,8 @@ const reducer = (state, action) => {
             ...initialState,
             user: null,
             token: null,
-            userLocation: null,
-            jobLocation: null,
+            userLocation: '',
+            jobLocation: '',
         }
     }
     throw new Error(`no such action :${action.type}`)
