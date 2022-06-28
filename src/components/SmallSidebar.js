@@ -11,7 +11,7 @@ const SmallSidebar = () => {
     <Wrapper>
         <div className='sidebar-container show-sidebar'>
             <div className='content'>
-                <button type='button' className='clost-btn' onClick={() => console.log('toggle')}>
+                <button type='button' className='close-btn' onClick={() => console.log('toggle')}>
                     <FaTimes />
                 </button>
                 <header>
