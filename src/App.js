@@ -1,6 +1,6 @@
 import React from "react";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import { Register, Landing, Error} from './pages'
+import { Register, Landing, Error, ProtectedRoute} from './pages'
 import {
   AllJobs,
   Stats,
@@ -15,7 +15,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SharedLayout/>}>
+        <Route path="/" element={
+        <ProtectedRoute><SharedLayout/></ProtectedRoute>
+        }>
           <Route index element={<Stats />} />
           <Route path="all-jobs" element={<AllJobs />} />
           <Route path="profile" element={<Profile />} />
