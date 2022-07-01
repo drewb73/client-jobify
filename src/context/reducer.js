@@ -60,31 +60,28 @@ const reducer = (state, action) => {
             jobLocation: '',
         }
     }
-    if (action.type === UPDATE_USER_BEGIN){
-        return {
-            ...state,
-            isLoading: true,
-        }
+    if (action.type === UPDATE_USER_BEGIN) {
+        return {...state, isLoading: true}
     }
-    if(action.type === UPDATE_USER_SUCCESS) {
+    if (action.type === UPDATE_USER_SUCCESS) {
         return {
             ...state,
-            isLoading: false,
-            token: action.payload.token,
             user: action.payload.user,
+            token: action.payload.token,
             userLocation: action.payload.location,
             jobLocation: action.payload.location,
-            showAlert: true,
-            alertType: 'success',
-            alertText: 'User Profile Updated!',
-        }
-    }
-    if(action.type === UPDATE_USER_ERROR) {
-        return {
-            ...state,
             isLoading: false,
             showAlert: true,
-            alertType: 'danger',
+            alertType: 'success',
+            alertText: 'User Updated',
+        }
+    }
+    if (action.type === UPDATE_USER_ERROR) {
+        return {
+            ...state, 
+            isLoading: false,
+            showAlert: true,
+            alertType:'danger',
             alertText: action.payload.msg,
         }
     }
