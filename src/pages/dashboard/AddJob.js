@@ -1,5 +1,5 @@
 import React from 'react'
-import {FormRow, Alert} from '../../components'
+import {FormRow, Alert, FormRowSelect} from '../../components'
 import { useAppContext } from '../../context/appContext'
 import Wrapper from '../../assets/wrappers/DashboardFormPage'
 
@@ -44,6 +44,10 @@ const handleJobInput = (e) => {
           <FormRow type='text' name='position' value={position} handleChange={handleJobInput}/>
           <FormRow type='text' name='company' value={company} handleChange={handleJobInput}/>
           <FormRow type='text' labelText='location' name='jobLocation' value={jobLocation} handleChange={handleJobInput}/>
+
+          <FormRowSelect name ='status' value={status} handleChange={handleJobInput} list={statusOptions} />
+          <FormRowSelect name ='jobType' labelText='job type' value={jobType} handleChange={handleJobInput} list={jobTypeOptions} />
+
 
           <div className='btn-container'>
            <button className='btn btn-block submit-btn' type='submit' onClick={handleSubmit}>submit</button>
