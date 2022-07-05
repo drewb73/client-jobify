@@ -7,6 +7,7 @@ import Wrapper from '../../assets/wrappers/DashboardFormPage'
 
 const AddJob = () => {
   const {
+    isEditing,
     showAlert,
     displayAlert,
     position,
@@ -25,10 +26,31 @@ const handleSubmit = (e) => {
     displayAlert()
     return
   }
+  console.log('Create Job')
+}
+
+const handleJobInput = (e) => {
+  const name = e.target.name
+  const value = e.target.value
+  console.log(`${name}:${value}`)
 }
 
   return (
-    <h1>AddJob</h1>
+    <Wrapper>
+      <form className='form'>
+        <h3>{isEditing ? 'edit job' : 'add job'} </h3>
+        {showAlert && <Alert />}
+        <div className='form-center'>
+          <FormRow type='text' name='position' value={position} handleChange={handleJobInput}/>
+          <FormRow type='text' name='company' value={company} handleChange={handleJobInput}/>
+          <FormRow type='text' labelText='location' name='jobLocation' value={jobLocation} handleChange={handleJobInput}/>
+
+          <div className='btn-container'>
+           <button className='btn btn-block submit-btn' type='submit' onClick={handleSubmit}>submit</button>
+          </div>
+        </div>
+      </form>
+    </Wrapper>
   )
 }
 
