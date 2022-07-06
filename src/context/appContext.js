@@ -1,7 +1,7 @@
 import React, { useReducer, useContext } from 'react'
 import reducer from './reducer'
 import axios from 'axios'
-import { DISPLAY_ALERT, CLEAR_ALERT, SETUP_USER_BEGIN, SETUP_USER_SUCCESS, SETUP_USER_ERROR, TOGGLE_SIDEBAR, LOGOUT_USER, UPDATE_USER_BEGIN, UPDATE_USER_SUCCESS, UPDATE_USER_ERROR, HANDLE_CHANGE } from "./actions"
+import { DISPLAY_ALERT, CLEAR_ALERT, SETUP_USER_BEGIN, SETUP_USER_SUCCESS, SETUP_USER_ERROR, TOGGLE_SIDEBAR, LOGOUT_USER, UPDATE_USER_BEGIN, UPDATE_USER_SUCCESS, UPDATE_USER_ERROR, HANDLE_CHANGE, CLEAR_VALUES, CREATE_JOB_BEGIN, CREATE_JOB_SUCCESS, CREATE_JOB_ERROR } from "./actions"
 
 const token = localStorage.getItem('token')
 const user = localStorage.getItem('user')
@@ -146,8 +146,32 @@ const AppProvider = ({children}) => {
         })
     }
 
+    const clearValues = () => {
+        dispatch({type: CLEAR_VALUES})
+    }
+
+    const createJob = async () => {
+        dispatch({type: CREATE_JOB_BEGIN})
+        try {
+            const {position, company, jobLocation, jobType, status} = state
+            await authFetch.post('/jobs', {
+                company, 
+                position,
+                jobLocation,
+                jobType,
+                status,
+            })
+            dispatch({type: CREATE_JOB_SUCCESS})
+            dispatch({type: CLEAR_VALUES})
+        } catch (error) {
+            if (error.response.status === 401) return
+            dispatch({type: CREATE_JOB_ERROR, payload: {msg: error.response.data.msg}})
+        }
+        clearAlert()
+    }
+
     return (
-    <AppContext.Provider value={{...state, displayAlert,setupUser, toggleSidebar, logoutUser, updateUser, handleChange}} >
+    <AppContext.Provider value={{...state, displayAlert,setupUser, toggleSidebar, logoutUser, updateUser, handleChange, clearValues, createJob}} >
         {children}
     </AppContext.Provider>
 
