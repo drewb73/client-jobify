@@ -6,7 +6,6 @@ import Wrapper from '../../assets/wrappers/DashboardFormPage'
 
 
 const AddJob = () => {
-  const {handleChange} = useAppContext
   const {
     isEditing,
     showAlert,
@@ -18,6 +17,7 @@ const AddJob = () => {
     jobTypeOptions,
     status,
     statusOptions,
+    handleChange,
   } = useAppContext()
 
 const handleSubmit = (e) => {

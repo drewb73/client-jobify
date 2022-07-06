@@ -146,9 +146,6 @@ const AppProvider = ({children}) => {
         })
     }
 
-  
-
-
     return (
     <AppContext.Provider value={{...state, displayAlert,setupUser, toggleSidebar, logoutUser, updateUser, handleChange}} >
         {children}
