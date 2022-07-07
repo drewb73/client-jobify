@@ -25,6 +25,10 @@ const initialState = {
     jobType: 'full-time',
     statusOptions:['interview', 'declined', 'pending', 'offer', 'accepted', 'applied'],
     status: 'pending',
+    jobs: [],
+    totalJobs: 0,
+    page: 1,
+    numOfPages: 1,
 
 }
 
