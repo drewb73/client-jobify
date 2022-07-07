@@ -50,15 +50,15 @@ const Wrapper = styled.article`
     color: #647acb;
   }
   .declined {
-    color: #d66a6a;
-    background: #ffeeee;
+    color: #9c0202;
+    background: #e55959;
   }
   .content {
     padding: 1rem 1.5rem;
   }
   .accepted {
-    color: #008000;
-    background: #ffeeee;
+    color: #065535;
+    background: #36ff20;
   }
   .content-center {
     display: grid;
