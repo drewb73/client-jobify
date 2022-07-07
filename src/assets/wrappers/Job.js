@@ -56,6 +56,10 @@ const Wrapper = styled.article`
   .content {
     padding: 1rem 1.5rem;
   }
+  .accepted {
+    color: #008000;
+    background: #ffeeee;
+  }
   .content-center {
     display: grid;
     grid-template-columns: 1fr;
