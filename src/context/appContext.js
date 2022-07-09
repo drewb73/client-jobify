@@ -194,13 +194,16 @@ const AppProvider = ({children}) => {
     const setEditJob = (id) => {
         dispatch({type: SET_EDIT_JOB, payload: {id}})
     }
+    const editJob = () => {
+        console.log('edit Job')
+    }
 
     const deleteJob = (id) => {
         console.log(`delete : ${id}`)
     }
 
     return (
-    <AppContext.Provider value={{...state, displayAlert,setupUser, toggleSidebar, logoutUser, updateUser, handleChange, clearValues, createJob, getJobs, setEditJob, deleteJob}} >
+    <AppContext.Provider value={{...state, displayAlert,setupUser, toggleSidebar, logoutUser, updateUser, handleChange, clearValues, createJob, getJobs, setEditJob, deleteJob, editJob}} >
         {children}
     </AppContext.Provider>
 
