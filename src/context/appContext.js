@@ -1,7 +1,7 @@
 import React, { useReducer, useContext} from 'react'
 import reducer from './reducer'
 import axios from 'axios'
-import { DISPLAY_ALERT, CLEAR_ALERT, SETUP_USER_BEGIN, SETUP_USER_SUCCESS, SETUP_USER_ERROR, TOGGLE_SIDEBAR, LOGOUT_USER, UPDATE_USER_BEGIN, UPDATE_USER_SUCCESS, UPDATE_USER_ERROR, HANDLE_CHANGE, CLEAR_VALUES, CREATE_JOB_BEGIN, CREATE_JOB_SUCCESS, CREATE_JOB_ERROR, GET_JOBS_BEGIN, GET_JOBS_SUCCESS } from "./actions"
+import { DISPLAY_ALERT, CLEAR_ALERT, SETUP_USER_BEGIN, SETUP_USER_SUCCESS, SETUP_USER_ERROR, TOGGLE_SIDEBAR, LOGOUT_USER, UPDATE_USER_BEGIN, UPDATE_USER_SUCCESS, UPDATE_USER_ERROR, HANDLE_CHANGE, CLEAR_VALUES, CREATE_JOB_BEGIN, CREATE_JOB_SUCCESS, CREATE_JOB_ERROR, GET_JOBS_BEGIN, GET_JOBS_SUCCESS, SET_EDIT_JOB } from "./actions"
 
 const token = localStorage.getItem('token')
 const user = localStorage.getItem('user')
@@ -192,7 +192,7 @@ const AppProvider = ({children}) => {
     }
 
     const setEditJob = (id) => {
-        console.log(`set edit job : ${id}`)
+        dispatch({type: SET_EDIT_JOB, payload: {id}})
     }
 
     const deleteJob = (id) => {
