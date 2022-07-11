@@ -34,7 +34,7 @@ const handleSubmit = (e) => {
     editJob()
     return 
   }
-  createJob()
+  createJob() 
 }
 
 const handleJobInput = (e) => {
