@@ -60,6 +60,14 @@ const Wrapper = styled.article`
     color: #065535;
     background: #36ff20;
   }
+  .offer {
+    color: #93c47d;
+    background: #d9ead3;
+  }
+  .applied {
+    color: #8e7cc3;
+    background: #d9d2e9;
+  }
   .content-center {
     display: grid;
     grid-template-columns: 1fr;
