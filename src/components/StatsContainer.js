@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAppContext } from '../context/appContext'
 import StatItem from './StatItem'
-import { FaSuitcaseRolling, FaCalendarCheck, FaBug } from 'react-icons/fa'
+import { FaSuitcaseRolling, FaCalendarCheck, FaBug, FaCheck, FaPenFancy, FaRegNewspaper } from 'react-icons/fa'
 import Wrapper from '../assets/wrappers/StatsContainer'
 
 const StatsContainer = () => {
@@ -31,21 +31,21 @@ const StatsContainer = () => {
     {
       title: 'offers accepted',
       count: stats.accepted || 0,
-      icon: <FaBug />,
+      icon: <FaCheck />,
       color: '#065535',
       bcg: '#36ff20',
     },
     {
       title: 'offers extended',
       count: stats.offer || 0,
-      icon: <FaBug />,
+      icon: <FaPenFancy />,
       color: '#93c47d',
       bcg: '#d9ead3',
     },
     {
       title: 'Jobs applied to',
       count: stats.applied || 0,
-      icon: <FaBug />,
+      icon: <FaRegNewspaper />,
       color: '#8e7cc3',
       bcg: '#d9d2e9',
     },
