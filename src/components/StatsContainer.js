@@ -33,21 +33,21 @@ const StatsContainer = () => {
       count: stats.accepted || 0,
       icon: <FaCheck />,
       color: '#065535',
-      bcg: '#36ff20',
+      bcg: '#ffffff',
     },
     {
       title: 'offers extended',
       count: stats.offer || 0,
       icon: <FaPenFancy />,
       color: '#93c47d',
-      bcg: '#d9ead3',
+      bcg: '#ffffff',
     },
     {
       title: 'Jobs applied to',
       count: stats.applied || 0,
       icon: <FaRegNewspaper />,
       color: '#8e7cc3',
-      bcg: '#d9d2e9',
+      bcg: '#ffffff',
     },
 
   ]
