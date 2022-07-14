@@ -7,4 +7,7 @@ import BigSidebar from './BigSidebar'
 import FormRowSelect from './FormRowSelect'
 import SearchContainer from './SearchContainer'
 import JobsContainer  from './JobsContainer'
-export {Logo, FormRow, Alert, Navbar, SmallSidebar,BigSidebar, FormRowSelect, SearchContainer, JobsContainer }
+import StatsItem from './StatsItem'
+import StatsContainer from './StatsContainer'
+import ChartsContainer from './ChartsContainer'
+export {Logo, FormRow, Alert, Navbar, SmallSidebar,BigSidebar, FormRowSelect, SearchContainer, JobsContainer, StatsContainer, ChartsContainer, StatsItem }
