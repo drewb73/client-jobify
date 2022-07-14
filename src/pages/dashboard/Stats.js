@@ -8,9 +8,15 @@ const Stats = () => {
   useEffect(() => {
     showStats()
   }, [])
-  
+
+  if (isLoading) {
+    return <Loading center />
+  }
+
   return (
-    <h1>Stats</h1>
+    <>
+      <StatsContainer />
+    </>
   )
 }
 

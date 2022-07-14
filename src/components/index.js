@@ -10,4 +10,5 @@ import JobsContainer  from './JobsContainer'
 import StatItem from './StatItem'
 import StatsContainer from './StatsContainer'
 import ChartsContainer from './ChartsContainer'
-export {Logo, FormRow, Alert, Navbar, SmallSidebar,BigSidebar, FormRowSelect, SearchContainer, JobsContainer, StatsContainer, ChartsContainer, StatItem }
+import Loading from './Loading'
+export {Logo, FormRow, Alert, Navbar, SmallSidebar,BigSidebar, FormRowSelect, SearchContainer, JobsContainer, StatsContainer, ChartsContainer, StatItem, Loading }
