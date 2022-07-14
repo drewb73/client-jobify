@@ -43,7 +43,7 @@ const StatsContainer = () => {
       bcg: '#d9ead3',
     },
     {
-      title: 'Jobs applied tp',
+      title: 'Jobs applied to',
       count: stats.applied || 0,
       icon: <FaBug />,
       color: '#8e7cc3',
