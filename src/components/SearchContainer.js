@@ -17,11 +17,31 @@ const SearchContainer = () => {
     clearFilters,
   } = useAppContext()
 
+const handleSearch = (e) => {
+  if (isLoading) return
+  handleChange({ name: e.target.name, value: e.target.value})
+}
 
-
+const handleSubmit = (e) => {
+  e.preventDefault()
+  clearFilters()
+}
 
   return (
-    <div>SearchContainer</div>
+    <Wrapper>
+      <form className='form'>
+        <h4>Search Form</h4>
+        {/* search position */}
+        <div className='form-center'>
+          {/* search by position */}
+          <FormRow type='text' name='search' value={search} handleChange={handleSearch}></FormRow>
+          {/* search by status */}
+          <FormRowSelect labelText='job status' name='searchStatus' value={searchStatus} handleChange={handleSearch} list={['all', ...statusOptions]} ></FormRowSelect>
+          {/* search by type */}
+          <FormRowSelect labelText='job type' name='searchType' value={searchType} handleChange={handleSearch} list={['all', ...jobTypeOptions]} ></FormRowSelect>
+        </div>
+      </form>
+    </Wrapper>
   )
 }
 
