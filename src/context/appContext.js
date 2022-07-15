@@ -31,6 +31,11 @@ const initialState = {
     numOfPages: 1,
     stats: {},
     monthlyApplications: [],
+    search: '',
+    searchStatus: 'all',
+    searchType: 'all',
+    sort: 'latest',
+    sortOptions: ['latest', 'oldest', 'a-z', 'z-a'],
 
 }
 
