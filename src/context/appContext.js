@@ -253,8 +253,12 @@ const AppProvider = ({children}) => {
         clearAlert()
     }
 
+    const clearFilters = () => {
+        console.log('clear Filters')
+    }
+
     return (
-    <AppContext.Provider value={{...state, displayAlert,setupUser, toggleSidebar, logoutUser, updateUser, handleChange, clearValues, createJob, getJobs, setEditJob, deleteJob, editJob, showStats}} >
+    <AppContext.Provider value={{...state, displayAlert,setupUser, toggleSidebar, logoutUser, updateUser, handleChange, clearValues, createJob, getJobs, setEditJob, deleteJob, editJob, showStats, clearFilters}} >
         {children}
     </AppContext.Provider>
 
