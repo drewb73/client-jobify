@@ -41,7 +41,7 @@ const handleSubmit = (e) => {
           <FormRowSelect labelText='job type' name='searchType' value={searchType} handleChange={handleSearch} list={['all', ...jobTypeOptions]} ></FormRowSelect>
           {/* sort */}
           <FormRowSelect name='sort' value={sort} handleChange={handleSearch} list={sortOptions} ></FormRowSelect>
-          <button className='btn btn-block btn-danger'>Clear Filter</button>
+          <button className='btn btn-block btn-danger'>Clear Filters</button>
         </div>
       </form>
     </Wrapper>
