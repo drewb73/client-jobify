@@ -1,4 +1,4 @@
-import logo from '../assets/images/logo.svg'
+import logo from '../assets/images/logov2.svg'
 import React from 'react'
 
 function Logo() {

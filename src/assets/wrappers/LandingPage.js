@@ -5,9 +5,11 @@ const Wrapper = styled.main`
     width: var(--fluid-width);
     max-width: var(--max-width);
     margin: 0 auto;
+    margin-top: 10px;
+    padding-top: 10px;
     height: var(--nav-height);
     display: flex;
-    align-items: center;
+    align-items: left;
   }
   .page {
     min-height: calc(100vh - var(--nav-height));
