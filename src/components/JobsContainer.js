@@ -10,7 +10,7 @@ export const JobsContainer = () => {
     const {getJobs, jobs, isLoading, page, totalJobs, search, searchStatus, searchType, sort, numOfPages} = useAppContext()
     useEffect(() => {
         getJobs()
-    }, [search, searchStatus, searchType, sort])
+    }, [page, search, searchStatus, searchType, sort])
 
     if (isLoading) {
         return <Loading center />
