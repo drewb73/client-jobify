@@ -22,8 +22,8 @@ const StatsContainer = () => {
       bg: '#e0e8f9',
     },
     {
-      title: 'jobs declined',
-      count: stats.declined || 0,
+      title: 'jobs rejected',
+      count: stats.rejected || 0,
       icon: <FaBug />,
       color: '#9c0202',
       bcg: '#e55959',

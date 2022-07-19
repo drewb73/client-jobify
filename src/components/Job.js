@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment'
-import { FaLocationArrow, FaBriefcase, FaCalendarAlt } from 'react-icons/fa'
+import { FaLocationArrow, FaBriefcase, FaCalendarAlt, FaRegEdit } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { useAppContext } from '../context/appContext'
 import Wrapper from '../assets/wrappers/Job'
@@ -24,6 +24,7 @@ const Job = ({company, createdAt, _id, position, jobLocation, status, jobType}) 
             <JobInfo icon={<FaLocationArrow />} text={jobLocation} />
             <JobInfo icon={<FaCalendarAlt />} text={date} />
             <JobInfo icon={<FaBriefcase />} text={jobType} />
+            <JobInfo icon={<FaRegEdit />} text={position} />
             <div className={`status ${status}`}>{status}</div>
         </div>
         <footer>

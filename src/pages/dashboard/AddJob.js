@@ -22,6 +22,7 @@ const AddJob = () => {
     clearValues,
     createJob,
     editJob,
+    startDate,
   } = useAppContext()
 
 const handleSubmit = (e) => {
@@ -52,9 +53,11 @@ const handleJobInput = (e) => {
           <FormRow type='text' name='position' value={position} handleChange={handleJobInput}/>
           <FormRow type='text' name='company' value={company} handleChange={handleJobInput}/>
           <FormRow type='text' labelText='location' name='jobLocation' value={jobLocation} handleChange={handleJobInput}/>
+          <FormRow type='text' labelText='start date' name='startDate' value={startDate} handleChange={handleJobInput}/>
 
           <FormRowSelect name ='status' value={status} handleChange={handleJobInput} list={statusOptions} />
           <FormRowSelect name ='jobType' labelText='job type' value={jobType} handleChange={handleJobInput} list={jobTypeOptions} />
+    
 
 
           <div className='btn-container'>

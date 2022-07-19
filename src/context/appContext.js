@@ -23,7 +23,7 @@ const initialState = {
     jobLocation: userLocation || '',
     jobTypeOptions: ['full-time', 'part-time', 'remote', 'internship'],
     jobType: 'full-time',
-    statusOptions:['interview', 'declined', 'pending', 'offer', 'accepted', 'applied'],
+    statusOptions:['interview', 'rejected', 'pending', 'offer', 'accepted', 'applied'],
     status: 'pending',
     jobs: [],
     totalJobs: 0,
@@ -36,6 +36,7 @@ const initialState = {
     searchType: 'all',
     sort: 'latest',
     sortOptions: ['latest', 'oldest', 'a-z', 'z-a'],
+    startDate: '',
 
 }
 
@@ -164,13 +165,14 @@ const AppProvider = ({children}) => {
     const createJob = async () => {
         dispatch({type: CREATE_JOB_BEGIN})
         try {
-            const {position, company, jobLocation, jobType, status} = state
+            const {position, company, jobLocation, jobType, status, startDate} = state
             await authFetch.post('/jobs', {
                 company, 
                 position,
                 jobLocation,
                 jobType,
                 status,
+                startDate,
             })
             dispatch({type: CREATE_JOB_SUCCESS})
             dispatch({type: CLEAR_VALUES})
@@ -208,13 +210,14 @@ const AppProvider = ({children}) => {
     const editJob = async () => {
         dispatch({ type: EDIT_JOB_BEGIN})
         try {
-            const {position, company, jobLocation, jobType, status} = state
+            const {position, company, jobLocation, jobType, status, startDate} = state
             await authFetch.patch(`/jobs/${state.editJobId}`, {
                 company,
                 position,
                 jobLocation,
                 jobType,
                 status,
+                startDate,
             })
             dispatch({
                 type: EDIT_JOB_SUCCESS,
