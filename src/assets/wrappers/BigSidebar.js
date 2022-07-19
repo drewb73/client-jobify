@@ -34,7 +34,7 @@ const Wrapper = styled.aside`
     .nav-link {
       display: flex;
       align-items: center;
-      color: var(--grey-500);
+      color: var(--blue);
       padding: 1rem 0;
       padding-left: 2.5rem;
       text-transform: capitalize;
@@ -56,10 +56,10 @@ const Wrapper = styled.aside`
       transition: var(--transition);
     }
     .active {
-      color: var(--grey-900);
+      color: var(--grey-700);
     }
     .active .icon {
-      color: var(--primary-500);
+      color: var(--primary-700);
     }
   }
 `
